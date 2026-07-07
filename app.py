@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 IMG_SIZE = 256
 
-model = tf.keras.models.load_model("leaf_disease_model_final.h5")
+model = tf.keras.models.load_model("leaf_scan/leaf_disease_model_final.h5")
 
 class_names = [
     "Cassava_Bacterial Blight (CBB)",
