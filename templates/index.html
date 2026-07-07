@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf Scan</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="header">
+
+    <div class="logo-section">
+
+        <img src="/static/logo1.jpeg" alt="Leaf Scan Logo" class="logo">
+
+        <div>
+            <h1>Leaf Scan</h1>
+            <p class="subtitle">AI Powered Leaf Disease Detection</p>
+        </div>
+
+    </div>
+
+    <nav class="navbar">
+        <a href="http://127.0.0.1:5000/">Home</a>
+        <a href="http://127.0.0.1:5000/about">About Us</a>
+        <a href="http://127.0.0.1:5000/learn">Learn</a>
+    </nav>
+
+</header>
+<div class="main">
+<div class="container">
+
+    <!-- <h1>🌿 Leaf Disease Detection</h1>
+    <p class="subtitle">
+        Upload a leaf image or use your camera to identify plant diseases.
+    </p> -->
+
+    <div class="card">
+
+        <h2>📁 Upload Image</h2>
+
+        <input type="file" id="image" accept="image/*">
+
+        <img id="preview" class="preview">
+
+        <button class="btn green" onclick="predict()">
+            Predict Uploaded Image
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <h2>📷 Live Camera</h2>
+
+        <button id="openCamera" class="btn blue">
+            Open Camera
+        </button>
+
+        <video id="video" autoplay></video>
+
+        <canvas id="canvas"></canvas>
+
+        <button id="capture" class="btn orange">
+            Capture & Predict
+        </button>
+
+    </div>
+
+    <div class="result-card">
+
+        <h2>Prediction Result</h2>
+
+        <div id="result">
+            Waiting for prediction...
+        </div>
+
+    </div>
+<!-- <footer class="footer">
+        <p style="margin-top: 20px;">© 2026 Leaf Scan | AI Powered Leaf Disease Detection</p>
+    </footer> -->
+</div>
+</div>
+<script src="/static/script.js"></script>
+
+</body>
+</html>
