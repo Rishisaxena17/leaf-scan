@@ -7,8 +7,12 @@ app = Flask(__name__)
 
 IMG_SIZE = 256
 
-model = tf.keras.models.load_model("leaf_disease_model_final.h5")
+import os
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "leaf_disease_model_final.h5")
+
+model = tf.keras.models.load_model(MODEL_PATH)
 class_names = [
     "Cassava_Bacterial Blight (CBB)",
     "Cassava_Brown Streak Disease (CBSD)",
@@ -102,11 +106,12 @@ def predict_api():
         "confidence": round(confidence * 100, 2)
     })
 
-
-import os
-
 if __name__ == "__main__":
-    app.run(
-        host="0.0.0.0",
-        port=int(os.environ.get("PORT", 5000))
-    )
+    app.run(debug=True)
+# import os
+
+# if __name__ == "__main__":
+#     app.run(
+#         host="0.0.0.0",
+#         port=int(os.environ.get("PORT", 5000))
+#     )
